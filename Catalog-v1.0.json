@@ -1,0 +1,297 @@
+{
+  "CatalogVersion": "1.0",
+  "Catalog": [
+    {
+      "ItemId": "sword-lvl1",
+      "ItemClass": "weapon",
+      "CatalogVersion": "1.0",
+      "DisplayName": "Short Sword",
+      "Description": "Short Sword. Usually is used for training.",
+      "VirtualCurrencyPrices": {},
+      "RealCurrencyPrices": null,
+      "Tags": [
+        "weapon",
+        "sword"
+      ],
+      "CustomData": "{\"damage-low\":\"1\",\"damage-high\":\"2\",\"attack-speed\":\"1.4\"}",
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "sword-lvl3",
+      "ItemClass": "weapon",
+      "CatalogVersion": "1.0",
+      "DisplayName": "Base Sword",
+      "Description": "Most common sword. Not a toy!",
+      "VirtualCurrencyPrices": {
+        "GD": 50
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "weapon",
+        "sword"
+      ],
+      "CustomData": "{\"damage-low\":\"2\",\"damage-high\":\"5\",\"attack-speed\":\"1.4\",\"level-req\":\"3\"}",
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "mace-lvl1",
+      "ItemClass": "weapon",
+      "CatalogVersion": "1.0",
+      "DisplayName": "Stick-n-stone",
+      "Description": "Mace... Kinda...",
+      "VirtualCurrencyPrices": {},
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "weapon",
+        "mace"
+      ],
+      "CustomData": "{\"damage-low\":\"1\",\"damage-high\":\"3\",\"attack-speed\":\"1.8\"}",
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "mace-lvl3",
+      "ItemClass": "weapon",
+      "CatalogVersion": "1.0",
+      "DisplayName": "Spoon",
+      "Description": "Common spoon. Someone still looking for it.",
+      "VirtualCurrencyPrices": {
+        "GD": 50
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "weapon",
+        "mace"
+      ],
+      "CustomData": "{\"damage-low\":\"3\",\"damage-high\":\"7\",\"attack-speed\":\"2.1\",\"level-req\":\"3\"}",
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "hp-pot-1",
+      "ItemClass": "consumable",
+      "CatalogVersion": "1.0",
+      "DisplayName": "Healing pot",
+      "Description": "Heals small amount of hp",
+      "VirtualCurrencyPrices": {
+        "GD": 10
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "consumable",
+        "healing"
+      ],
+      "CustomData": "{\"healing-points\":\"20\"}",
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": 15,
+        "UsagePeriodGroup": "cons-pot"
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": true,
+      "IsTradable": false,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "armor-cloth-1",
+      "ItemClass": "armor",
+      "CatalogVersion": "1.0",
+      "DisplayName": "T-shirt",
+      "Description": "Cotton t-shirt",
+      "VirtualCurrencyPrices": {},
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "armor",
+        "cloth"
+      ],
+      "CustomData": "{\"armor\":\"2\"}",
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "armor-cloth-3",
+      "ItemClass": "armor",
+      "CatalogVersion": "1.0",
+      "DisplayName": "Jacket",
+      "Description": "Cotton jacket",
+      "VirtualCurrencyPrices": {
+        "GD": 200
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "armor",
+        "cloth"
+      ],
+      "CustomData": "{\"armor\":\"10\",\"level-req\":\"3\"}",
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": true,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "bundle-start-weapon",
+      "ItemClass": null,
+      "CatalogVersion": "1.0",
+      "DisplayName": "Weapon bundle",
+      "Description": "Contains a weapon for new players.",
+      "VirtualCurrencyPrices": {
+        "GD": 10
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "weapon"
+      ],
+      "CustomData": null,
+      "Consumable": {
+        "UsageCount": null,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": null,
+      "Bundle": {
+        "BundledItems": [],
+        "BundledResultTables": [
+          "dtbl-start-weapon"
+        ],
+        "BundledVirtualCurrencies": null
+      },
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": false,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    },
+    {
+      "ItemId": "container-armor",
+      "ItemClass": null,
+      "CatalogVersion": "1.0",
+      "DisplayName": "Packet with cloth",
+      "Description": "Prepared by kind friends",
+      "VirtualCurrencyPrices": {
+        "GD": 200
+      },
+      "RealCurrencyPrices": {},
+      "Tags": [
+        "armor"
+      ],
+      "CustomData": null,
+      "Consumable": {
+        "UsageCount": 1,
+        "UsagePeriod": null,
+        "UsagePeriodGroup": null
+      },
+      "Container": {
+        "KeyItemId": null,
+        "ItemContents": [
+          "armor-cloth-1"
+        ],
+        "ResultTableContents": [],
+        "VirtualCurrencyContents": null
+      },
+      "Bundle": null,
+      "CanBecomeCharacter": false,
+      "IsStackable": false,
+      "IsTradable": false,
+      "ItemImageUrl": null,
+      "IsLimitedEdition": false,
+      "InitialLimitedEditionCount": 0,
+      "ActivatedMembership": null
+    }
+  ],
+  "DropTables": [
+    {
+      "TableId": "dtbl-start-weapon",
+      "Nodes": [
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "sword-lvl1",
+          "Weight": 1
+        },
+        {
+          "ResultItemType": "ItemId",
+          "ResultItem": "mace-lvl1",
+          "Weight": 1
+        }
+      ]
+    }
+  ]
+}

@@ -24,7 +24,7 @@ public class PlayFabAccountManager : MonoBehaviour
     private void OnFailure(PlayFabError error)
     {
         var errorMessage = error.GenerateErrorReport();
-        Debug.LogError($"Something went wrong: {errorMessage}");
+        Debug.LogError($"GetAccountInfo: Something went wrong: {errorMessage}");
     }
 
     public void ForgetPlayerPref()
