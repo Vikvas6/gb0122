@@ -131,10 +131,10 @@
         "consumable",
         "healing"
       ],
-      "CustomData": "{\"healing-points\":\"20\"}",
+      "CustomData": "{\"power\":\"20\",\"type\":\"hp\"}",
       "Consumable": {
-        "UsageCount": null,
-        "UsagePeriod": 15,
+        "UsageCount": 1,
+        "UsagePeriod": null,
         "UsagePeriodGroup": "cons-pot"
       },
       "Container": null,
