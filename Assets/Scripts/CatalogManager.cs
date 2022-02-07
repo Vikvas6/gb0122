@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class CatalogManager : MonoBehaviour
 {
+    static public CatalogManager Instance;
+    
     [SerializeField] private StoreItem _item;
     
     private readonly Dictionary<string, CatalogItem> _catalog = new Dictionary<string, CatalogItem>();
@@ -13,6 +15,8 @@ public class CatalogManager : MonoBehaviour
 
     private void Start()
     {
+        Instance = this;
+        
         PlayFabClientAPI.GetCatalogItems(new GetCatalogItemsRequest(), OnGetCatalogSuccess, OnFailure);
         UpdateUserInventory();
     }
@@ -36,7 +40,7 @@ public class CatalogManager : MonoBehaviour
             _catalog.Add(item.ItemId, item);
             Debug.Log($"Catalog item {item.ItemId} was added successfully!");
             var storeItem = Instantiate(_item, _item.transform.parent);
-            storeItem.InitializeItem(this, item);
+            storeItem.InitializeItem(item);
             storeItem.gameObject.SetActive(true);
         }
     }
@@ -60,5 +64,10 @@ public class CatalogManager : MonoBehaviour
     public int GetCurrentGold()
     {
         return _gold;
+    }
+
+    public CatalogItem GetItem(string itemId)
+    {
+        return _catalog[itemId];
     }
 }

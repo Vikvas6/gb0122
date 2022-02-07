@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine;
@@ -78,6 +79,8 @@ public class PlayFabLogin : MonoBehaviour
         }, success =>
         {
             PlayerPrefs.SetString(AuthGuidKey, id);
+            SetUserData();
+            GetUserData(success.PlayFabId);
             SceneManager.LoadScene(1);
         }, OnFailure);
         ShowLoadingIndicator();
@@ -131,5 +134,33 @@ public class PlayFabLogin : MonoBehaviour
             _loadingIndicator.transform.Rotate(Vector3.forward, -4.0f);
             yield return new WaitForSeconds(0.01f);
         }
+    }
+    
+    void SetUserData() {
+        PlayFabClientAPI.UpdateUserData(new UpdateUserDataRequest() {
+                Data = new Dictionary<string, string>() {
+                    {"Ancestor", "Arthur"},
+                    {"Successor", "Fred"}
+                }
+            },
+            result => Debug.Log("Successfully updated user data"),
+            error => {
+                Debug.Log("Got error setting user data Ancestor to Arthur");
+                Debug.Log(error.GenerateErrorReport());
+            });
+    }
+    
+    void GetUserData(string myPlayFabId) {
+        PlayFabClientAPI.GetUserData(new GetUserDataRequest() {
+            PlayFabId = myPlayFabId,
+            Keys = null
+        }, result => {
+            Debug.Log("Got user data:");
+            if (result.Data == null || !result.Data.ContainsKey("Ancestor")) Debug.Log("No Ancestor");
+            else Debug.Log("Ancestor: "+result.Data["Ancestor"].Value);
+        }, (error) => {
+            Debug.Log("Got error retrieving user data:");
+            Debug.Log(error.GenerateErrorReport());
+        });
     }
 }

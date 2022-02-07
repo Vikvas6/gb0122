@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -243,6 +244,7 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public void OnStartGameButtonClicked()
     {
         Debug.Log("Start game!");
+        SceneManager.LoadScene(2);
     }
 
     #endregion
