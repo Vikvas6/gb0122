@@ -10,7 +10,13 @@ public class PlayFabAccountManager : MonoBehaviour
 {  
     [SerializeField] private Text _titleLabel;
     private const string AuthGuidKey = "authorization-guid";
-
+    
+    [SerializeField] private GameObject CharacterSelectPanel;
+    
+    [SerializeField] private GameObject CharSlotOneBtn;
+    [SerializeField] private GameObject CharSlotTwoBtn;
+    
+    
     private void Start()
     {
         PlayFabClientAPI.GetAccountInfo(new GetAccountInfoRequest(), OnGetAccountSuccess, OnFailure);
@@ -35,5 +41,10 @@ public class PlayFabAccountManager : MonoBehaviour
         }
 
         SceneManager.LoadScene(0);
+    }
+    
+    public void OpenCharacterSelectPanel()
+    {
+        CharacterSelectPanel.SetActive(true);
     }
 }
