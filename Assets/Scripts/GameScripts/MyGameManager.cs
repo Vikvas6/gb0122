@@ -1,21 +1,22 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using Photon.Pun;
 using Photon.Realtime;
 using PlayFab;
 using PlayFab.ClientModels;
-using PlayFab.Json;
-using PlayFab.SharedModels;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MyGameManager : MonoBehaviourPunCallbacks
 {
     static public MyGameManager Instance;
     
     [SerializeField] private GameObject _playerPrefab;
+    
+    [SerializeField] private Text _textLevel;
+    [SerializeField] private Text _textXP;
+    [SerializeField] private Text _textGold;
+    [SerializeField] private Text _textHP;
+    [SerializeField] private Text _textDmg;
     
     private void Start()
     {
@@ -35,6 +36,8 @@ public class MyGameManager : MonoBehaviourPunCallbacks
             {
                 Debug.LogFormat("Ignoring scene load for {0}", SceneManagerHelper.ActiveSceneName);
             }
+
+            GetCharacter();
             GetInventory();
         }
         
@@ -88,7 +91,7 @@ public class MyGameManager : MonoBehaviourPunCallbacks
     
     private void GetInventory() {
         Debug.Log("Getting inventory");
-        PlayFabClientAPI.GetUserInventory(new GetUserInventoryRequest(), LogSuccess, LogFailure);
+        PlayFabClientAPI.GetUserInventory(new GetUserInventoryRequest(), LogSuccess, Debug.LogError);
     }
     
     private void LogSuccess(GetUserInventoryResult result) {
@@ -109,8 +112,19 @@ public class MyGameManager : MonoBehaviourPunCallbacks
         var requestName = result.Request.GetType().Name;
         Debug.Log(requestName + " successful");
     }
-
-    private void LogFailure(PlayFabError error) {
-        Debug.LogError(error.GenerateErrorReport());
+    
+    private void GetCharacter() {
+        Debug.Log("Getting character");
+        PlayFabClientAPI.GetCharacterStatistics(new GetCharacterStatisticsRequest
+        {
+            CharacterId = PlayerPrefs.GetString(CharacterManager.PLAYER_PREFS_CHARACTER_KEY)
+        }, result =>
+        {
+            _textLevel.text = result.CharacterStatistics["Level"].ToString();
+            _textXP.text = result.CharacterStatistics["XP"].ToString();
+            _textGold.text = result.CharacterStatistics["Gold"].ToString();
+            _textDmg.text = $"{result.CharacterStatistics["DmgLow"].ToString()}-{result.CharacterStatistics["DmgHi"].ToString()}";
+            _textHP.text = result.CharacterStatistics["HP"].ToString();
+        }, Debug.LogError);
     }
 }
